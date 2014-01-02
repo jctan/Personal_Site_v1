@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.php</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>About.html</welcome-file>
+    <welcome-file>Resume.html</welcome-file>
+    <welcome-file>Contact.html</welcome-file>
+    <welcome-file>Contact.php</welcome-file>
+  </welcome-file-list>
+  <resource-ref>
+    <res-ref-name>myDataBaseName</res-ref-name>
+    <res-type>javax.sql.DataSource</res-type>
+    <res-auth>Container</res-auth>
+  </resource-ref>
+  
+  <servlet>
+ 	 <display-name>Mailer</display-name>
+    <servlet-name>Mailer</servlet-name>
+    <servlet-class>Mailer</servlet-class>
+  </servlet>
+   <servlet-mapping>
+    <servlet-name>Mailer</servlet-name>
+    <url-pattern>/Mailer</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  <servlet>
+    <description></description>
+    <display-name>contactServlet</display-name>
+    <servlet-name>contactServlet</servlet-name>
+    <servlet-class>contactServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>contactServlet</servlet-name>
+    <url-pattern>/contactServlet</url-pattern>
+  </servlet-mapping>
+  
+  
+   <display-name>contactServlet</display-name>
+ 
+    <!-- SMTP settings -->
+    <context-param>
+        <param-name>host</param-name>
+        <param-value>smtp.gmail.com</param-value>
+    </context-param>
+ 
+    <context-param>
+        <param-name>port</param-name>
+        <param-value>587</param-value>
+    </context-param>
+ 
+    <context-param>
+        <param-name>user</param-name>
+        <param-value>jctan00@gmail.com</param-value>
+    </context-param>
+ 
+    <context-param>
+        <param-name>pass</param-name>
+        <param-value>j5201314</param-value>
+    </context-param>
+ 
+    <welcome-file-list>
+        <welcome-file>Contact.jsp</welcome-file>
+    </welcome-file-list>
+  
+  
+  
+</web-app>

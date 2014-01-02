@@ -1,0 +1,174 @@
+<%@page import="mail.SendMail" %>
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
+    <title>JOHN TAN</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name = "description" content="">
+	<meta name = "author" content="">
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/bootstrap-responsive.css" rel="stylesheet">
+	
+	<!--styles --> 
+	<link href="styles.css" rel="stylesheet" type="text/css">
+	
+	 <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="ico/favicon.png">
+	
+	<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+    
+     <!-- jQuery -->
+    <script type = "text/javascript" src = "transition.js"></script>
+    
+  </head>
+  <body>
+  
+	<div class = "container-narrow">
+		<div class  = "container">
+		
+				<ul class = "nav nav-pills pull-right">
+					<li ><a href = "About.html">ABOUT</a></li>
+					<li ><a href = "Resume.html">RESUMÉ</a></li>
+					<li class = "active"><a href = "contact.jsp">CONTACT</a></li>
+				</ul>
+				<h2 class="text-muted">JOHN TAN</h2>
+		</div>
+		
+		<!--thematic break-->
+		<div class = "container">
+		<hr>
+		</div>
+	
+		<!--CONTACT ME-->
+		<div class = "container"> 
+		
+		<div class="row">
+			
+			<div class = "hero-unit">
+				<h1>Want to keep in touch?</h1>
+				<p class = "tagline">Simply fill out the form below!</p>
+			</div><!--end hero unit -->
+			<br>
+			
+			<section class = "span6">
+				<div class = "left_side">
+				
+				<form action = "contact.jsp" name = "form" method="post">
+					
+					<div class = "control-group">
+						<label class = "control-label" for="inputEmail"><i class = "glyphicon glyphicon-user"></i> Full Name</label>
+						<div class = "controls controls-row">
+							<input type = "text" name = "name" class = "input-xxlarge" id="name" placeholder="your name"></input>
+						</div>
+					</div>
+					<br>
+					
+					<div class = "control-group">
+						<label class = "control-label" for="inputEmail"><i class = "glyphicon glyphicon-envelope"></i> E-mail</label>
+						<div class = "controls">
+							<input type = "text" name = "email" class = "input-xxlarge" id="email" placeholder="you@yourdomain.com"></input>
+						</div>
+					</div>
+					<br>
+					
+					<div class = "control-group">
+						<label class = "control-label" for="inputEmail"><i class = "glyphicon glyphicon-question-sign"></i> Subject</label>
+						<div class = "controls">
+							<input type = "text" name = "subject" class = "input-xxlarge" id="subject" placeholder="enter the subject line"></input>
+						</div>
+					</div>
+					<br>
+					
+					<div class = "control-group">
+						<label class = "control-label" for="inputEmail"><i class = "glyphicon glyphicon-pencil"></i> Message</label>
+						<div class = "controls">
+							<textarea rows="6" cols="60" name = "msg" class = "input-xxlarge" placeholder="your message to me"></textarea>
+						</div>
+					</div>
+					<br>
+					
+					<div class = "control-group">
+					<div class = "controls">
+						<button type = "submit" name = "send" id = "send" class = "btn btn-success">Send Message</button>
+					</div>
+					</div>
+				</form>
+				
+				<br>
+				<%
+				if(request.getParameter("name") != null){
+					String name = request.getParameter("name");
+					String email = request.getParameter("email");
+					String subjectline = request.getParameter("subject");
+					String msg = request.getParameter("msg");
+					
+					if(mail.SendMail.run(email,name,subjectline,msg)){
+						%>
+						<p class = "good"> <b>Message Sent Successfully!</b></p>
+						<%} else { %>
+						<p class = "warning"> <b>Error Sending Message</b></p>
+						<%}
+					}
+					%>
+					
+					
+				</div>
+				
+			</section><!--end section-->
+			
+			
+			<section class = "span6">
+			<div class = "right_side">
+				
+				<b><p class = "text-muted">Where am I located? </p></b>
+				<div class = "well">
+				<iframe width="500" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=New+York,+NY&amp;aq=0&amp;oq=New+Yor&amp;sll=40.697488,-73.979681&amp;sspn=0.757979,1.551819&amp;ie=UTF8&amp;hq=&amp;hnear=New+York&amp;t=m&amp;ll=40.731389,-73.993263&amp;spn=0.091057,0.171661&amp;z=12&amp;iwloc=A&amp;output=embed"></iframe>
+				</div><!--end well *Map -->
+			
+			</div>
+			</section><!--end section-->
+		
+	</div><!--end row --> 
+	</div> <!-- end of container -->
+	</div> <!-- end of container-narrow -->
+	
+		
+	<!--thematic break-->
+	<div class = "container">
+	<hr>
+	</div>
+	
+	
+	<!--Site Built By John Tan-->
+	<div class = "navbar navbar-default navbar-fixed-bottom">
+		<div class = "container">
+			<p class = "navbar-text pull-right">&copy 2013 John Tan </p>
+		</div>
+	</div>
+	
+
+	
+	<!--jQuery.com --> 
+	<script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/jquery.js"></script>
+	
+
+	
+  </body>
+</html>

@@ -1,0 +1,80 @@
+body {
+padding-top: 50px;
+padding-bottom: 40px;
+}
+
+/* Custom container */
+.container-narrow {
+margin: 0 auto;
+max-width: 1000px;
+}
+
+.container {
+margin: 0 auto;
+max-width: 1000px;
+}
+
+.container-narrow > hr {
+margin: 30px 0;
+}
+
+.nav.nav-pills.pull-right{
+	position: relative;
+	bottom: -15px;
+	
+}
+
+
+.label {
+float:left;
+font-size: 100%;
+
+}
+
+.left_side{
+float:left;
+display:inline-block;
+}
+
+.right_side{
+float:right;
+display:inline-block;.
+margin-top: 80px;
+
+}
+
+.NYMoveRight{
+	float: right;
+}
+
+.DatesMoveRight{
+	float: right;
+	color:#A0A0A0;
+}
+
+.container.marketing{
+	width:700px;
+	margin: 0 auto;	
+}
+
+
+.aboutme{
+	padding-top: 20px;
+	float: left;
+	margin-left:20px;
+	width: 280px;
+
+}
+
+
+.contactinfo{
+	padding-top: 20px;
+	float: right;
+	width: 350px;
+	position: absolute;
+	margin-left: 350px;
+
+}
+
+
+
